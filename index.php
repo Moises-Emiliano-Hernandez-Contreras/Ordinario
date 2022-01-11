@@ -24,7 +24,16 @@
                               }
                         })
                   }
-                  cargar()                  
+                  cargar() 
+                  $tipo.addEventListener('change', function(){
+                        const nombreTipo=$tipo.value
+                        console.log(nombreTipo)
+                        if(nombreTipo=='Magna'){
+                              prec=15;
+                        }
+                        if(nombreTipo=='Premium')
+                              prec=10;
+                  })
             })
             
       </script>
@@ -38,13 +47,14 @@
             
             <p>Tipo:</p>
             <select name="Tipo" id="Tipo">            
-            <option value="0"> </option>
+            <option value="vacio"> </option>
             <option value="Magna">Magna</option>
             <option value="Premium">Premium</option>
             </select> 
-                        
+            
             <p>Precio:</p>
-            <input type="text" value="" id="precio" name="precio">            
+            <input type="text" value=""
+             id="precio" name="precio">            
             
             <p>Cantidad:</p>
             <input type="number" min="0" name="cantidad">
