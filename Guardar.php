@@ -9,30 +9,36 @@ if ($_POST) {
             header('location:index.php');
             die();
       }else{
-            var_dump($_POST);                                
+            $subtotal=$cantidad*$precio;
+            $Desc=$subtotal*$descuento;      
+            $total=$subtotal-$Desc;                                        
       }
-      $subtotal=$cantidad*$precio;
-      $Desc=$subtotal*$descuento;      
-      $total=$subtotal-$Desc;
-      echo "Total: ".$total."<br>";
-      echo $descuento.'<br>'.$cantidad.'<br>'.$precio.'<br>'.$Desc;
 }else{
       header("Location:index.php");
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <title>Document</title>
+      <title>Finalizar</title>
 </head>
 <body>
       <main>
-            <h2>Total a pagar</h2>
-            <h1><?php echo $total; ?> MXN</h1>
+      <h2>Total a pagar</h2>                  
+      <h1><?php echo $total;?> MXN</h1>
+            <form action="almacenar.php" method='post'>
+                  <input type="hidden" value='<?php echo $fecha;?>' name='fecha'>
+                  <input type="hidden" value='<?php echo $tipo; ?>' name="tipo">
+                  <input type="hidden" value="<?php echo $total; ?>" name="total"> 
+                  <input type="hidden" value="<?php echo $cantidad; ?>" name="Cantidad"> 
+                  <input type="hidden" value="<?php echo $descuento*100; ?>" name="descuento">
+                  <input type="hidden" value="<?php echo $Desc; ?>" name="Desc_total"> 
+                  <input type="submit" value="Finalizar venta">
+            </form>                        
       </main>
 </body>
 </html>

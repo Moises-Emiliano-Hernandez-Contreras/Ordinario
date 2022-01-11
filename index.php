@@ -4,13 +4,22 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">		
-      <script src="jquery-3.6.0.min.js"></script>            
+      <!-- <script src="jquery-3.6.0.min.js"></script> 
+ -->  
+ <!-- CDN del JQUERY -->         
+      <script   src="https://code.jquery.com/jquery-3.6.0.min.js"	
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		crossorigin="anonymous"></script>
       <script>
+            //funcion para que carge despues del html
             $(document).ready(function(){
+                  //el select
                   let tipo= document.querySelector('#Tipo')
+                  //la funcion para que vea el cambio en el select
                   tipo.addEventListener('change', function(){
                         const nombreTipo=tipo.value
                         console.log(nombreTipo)
+                        //asigna al precio la cantidad
                         if(nombreTipo=='Magna'){
                               prec=15;
                               document.getElementById('precio').value='15.45'
