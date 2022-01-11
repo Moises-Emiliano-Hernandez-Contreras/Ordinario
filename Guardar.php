@@ -12,10 +12,10 @@ if ($_POST) {
             var_dump($_POST);                                
       }
       $subtotal=$cantidad*$precio;
-      $Desc=$descuento/100;      
+      $Desc=$subtotal*$descuento;      
       $total=$subtotal-$Desc;
       echo "Total: ".$total."<br>";
-      echo $descuento.$cantidad.$precio;
+      echo $descuento.'<br>'.$cantidad.'<br>'.$precio.'<br>'.$Desc;
 }else{
       header("Location:index.php");
 }
