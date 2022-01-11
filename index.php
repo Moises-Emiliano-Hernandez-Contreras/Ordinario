@@ -1,7 +1,3 @@
-<?php
-/*       $magna=12;
-      $premium=15;   */          
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,28 +7,18 @@
       <script src="jquery-3.6.0.min.js"></script>            
       <script>
             $(document).ready(function(){
-                  let $tipo= document.querySelector('#Tipo')
-                  let precio = document.querySelector('#precio')
-                  function cargar(){
-                        $.ajax({
-                              type:"GET",
-                              url:"tipo.php",
-                              success: function(response){
-                                    //console.log(response)
-                                    const tipos=JSON.parse(response)                                    
-                                    
-                              }
-                        })
-                  }
-                  cargar() 
-                  $tipo.addEventListener('change', function(){
-                        const nombreTipo=$tipo.value
+                  let tipo= document.querySelector('#Tipo')
+                  tipo.addEventListener('change', function(){
+                        const nombreTipo=tipo.value
                         console.log(nombreTipo)
                         if(nombreTipo=='Magna'){
                               prec=15;
+                              document.getElementById('precio').value='15.45'
                         }
-                        if(nombreTipo=='Premium')
-                              prec=10;
+                        if(nombreTipo=='Premium'){
+                              document.getElementById('precio').value='25.567'
+                        }
+                              
                   })
             })
             
@@ -53,8 +39,7 @@
             </select> 
             
             <p>Precio:</p>
-            <input type="text" value=""
-             id="precio" name="precio">            
+            <input type="text" value="" id="precio" name="precio">            
             
             <p>Cantidad:</p>
             <input type="number" min="0" name="cantidad">
@@ -62,13 +47,12 @@
             <p>Descuento</p>
             <select name="Descuento">            
             <option value="0"> </option>
-            <option value="10">10%</option>
-            <option value="20">20%</option>
+            <option value="0.1">10%</option>
+            <option value="0.2">20%</option>
             </select> 
             
             <button type="reset">Cancelar</button>
             <button type="submit">Pagar</button>      
-      </form>
-      <?php if(isset($_POST)){ var_dump($_POST);} ?>
+      </form>      
 </body>
 </html>
