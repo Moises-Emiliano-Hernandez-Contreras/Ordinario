@@ -30,14 +30,18 @@ if ($_POST) {
                   //redireccion del modal
                   document.getElementById("Cerrar").addEventListener('click', function(){
                   location.assign("index.php")
-                  })
-            });      
+                  })                  
+
+           
+      
+      });      
       </script>
     <title>Venta exitosa</title>
   </head>
   <body>    
       <?php if($insertar->execute(array($fecha,$tipo,$total,$cantidad,$descuento,$desc_total))): ?>
-      <div class="modal"  id='myModal' tabindex="-1">
+      <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false"
+      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" id='myModal'>
             <div class="modal-dialog">
             <div class="modal-content">
                   <div class="modal-header">
