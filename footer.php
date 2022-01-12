@@ -22,7 +22,7 @@
                         <i class="fab fa-facebook-f"></i>
                   </a>
             </div>
-            <p>Designed by Moisés Emiliano Hernández Contreras</p> 
+            <p>Hecho por Moisés Emiliano Hernández Contreras</p> 
       </footer>
 </body>
 </html>

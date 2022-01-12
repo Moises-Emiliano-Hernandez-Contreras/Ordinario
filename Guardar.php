@@ -10,8 +10,10 @@ if ($_POST) {
             die();
       }else{
             $subtotal=$cantidad*$precio;
-            $Desc=$subtotal*$descuento;      
+            $Desc=$subtotal*$descuento;
+            $Desc=round($Desc,2);
             $total=$subtotal-$Desc;                                        
+            $total=round($total,2);
       }
 }else{
       header("Location:index.php");
@@ -33,8 +35,8 @@ if ($_POST) {
             <form action="almacenar.php" method='post'>
                   <input type="hidden" value='<?php echo $fecha;?>' name='fecha'>
                   <input type="hidden" value='<?php echo $tipo; ?>' name="tipo">
-                  <input type="hidden" value="<?php echo $total; ?>" name="total"> 
                   <input type="hidden" value="<?php echo $cantidad; ?>" name="Cantidad"> 
+                  <input type="hidden" value="<?php echo $total; ?>" name="total"> 
                   <input type="hidden" value="<?php echo $descuento*100; ?>" name="descuento">
                   <input type="hidden" value="<?php echo $Desc; ?>" name="Desc_total"> 
                   <input type="submit" value="Finalizar venta" class='btn btn-success mt-3 rounded-3'>

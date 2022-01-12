@@ -12,8 +12,8 @@
 <img src="./Banner.jpg" alt="" width='100%'>
 <header class='header bg-success w-auto p-2 fs-5 d-flex justify-content-around'>            
             <a href="index.php" class="text-decoration-underline text-light">Inicio</a>
-            <a href="#" class="text-decoration-underline text-light">Ventas por día</a>
-            <a href="#" class="text-decoration-underline text-light">Ventas totales</a>
+            <a href="Ventasxdia.php" class="text-decoration-underline text-light">Ventas por día</a>
+            <a href="VentasTotales.php" class="text-decoration-underline text-light">Ventas totales</a>
 </header>
 </body>
 </html>
